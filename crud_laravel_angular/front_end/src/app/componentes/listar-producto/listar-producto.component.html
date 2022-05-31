@@ -1,0 +1,32 @@
+<div class="card text-center">
+    <div class="card-header">Productos</div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">CATEGORIA</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">REFERENCIA</th>
+                    <th scope="col">PRECIO</th>
+                    <th scope="col">STOCK</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor=" let producto of productos; let iControl=index">
+                    <th scope="row"> {{ producto.id }}</th>
+                    <td>{{ producto.category }}</td>
+                    <td>{{ producto.name }}</td>
+                    <td>{{ producto.reference }}</td>
+                    <td>{{ producto.price }}</td>
+                    <td>{{ producto.stock }}</td>
+                    <td>
+                        <a routerLink='/editar-producto/{{ producto.id }}'  class="btn btn-primary">editar</a>  
+                        <a class="btn btn-danger" (click)="borrarProducto(producto.id,iControl)">eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="card">
+    <h5 class="card-header">Agregar Producto</h5>
+    <div class="card-body">
+        <form [formGroup]="formularioProductos" (ngSubmit)="enviarData()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre:</label>
+                <input name="name" formControlName="name" type="text" placeholder="nombre" class="form-control" id="name" aria-describedby="nombre">
+            </div>
+
+            <div class="mb-3">
+                <label for="category"  class="form-label">Category:</label>
+                <select name="category" formControlName="category" class="mb-3 form-select" aria-label="select category">
+                    <option value="">Seleccionar...</option>
+                    <option value="bebidas">bebidas</option>
+                    <option value="panadería">panadería</option>
+                    <option value="pastelería">pastelería</option>
+                    <option value="postres">postres</option>
+                    <option value="tortas">tortas</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="reference" class="form-label">Reference:</label>
+                <select name="reference" formControlName="reference" class="mb-3 form-select" aria-label="select reference">
+                    <option value="">Seleccionar...</option>
+                    <option value="250ml">250ml</option>
+                    <option value="500ml">500ml</option>
+                    <option value="600ml">600ml</option>
+                    <option value="1l">1l</option>
+                    <option value="1.5l">1.5l</option>
+                    <option value="und[s]">und[s]</option>
+                    <option value="libra[s]">libra[s]</option>
+                    <option value="kilo[s]">kilo[s]</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock:</label>
+                <input type="number" formControlName="stock" placeholder="stock" class="form-control" id="stock" name="stock" aria-describedby="stock">
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Precio:</label>
+                <input type="number" formControlName="price" placeholder="price" class="form-control" id="price" name="price" aria-describedby="precio">
+            </div>
+
+            <div class="bnt-group" role="group">
+                <button class="btn btn-success align-left" type="submit">agregar</button>
+                <button class="btn btn-danger align-right" type="">cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
